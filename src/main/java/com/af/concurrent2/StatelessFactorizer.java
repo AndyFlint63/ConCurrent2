@@ -1,6 +1,8 @@
 package com.af.concurrent2;
 
 import java.io.IOException;
+import java.math.BigInteger;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
@@ -10,10 +12,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.af.annotations.ThreadSafe;
+
 /**
  * Servlet implementation class StatelessFactorizer
  */
 @WebServlet("/StatelessFactorizer")
+@ThreadSafe
 public class StatelessFactorizer extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -53,8 +58,32 @@ public class StatelessFactorizer extends HttpServlet {
 		doGet(request, response);
 	}
 	
+
+	
 	public void service(ServletRequest req, ServletResponse resp) {
-		// forcing a change
+		BigInteger i = extractFromRequest(req);
+		BigInteger[] factors = factor(i);
+		encodeIntoResponse(resp, factors);
+	
+		
+	}
+	
+    void encodeIntoResponse(ServletResponse resp, BigInteger[] factors) {
+    }
+	
+    BigInteger[] factor(BigInteger i) {
+        // Doesn't really factor
+        return new BigInteger[] { i };
+    }
+	
+	private BigInteger extractFromRequest(ServletRequest req) {
+		int i1 = 1;
+		String s1 = "7";
+		
+		
+		return new BigInteger( (String) s1);
+	
+		
 		
 	}
 
