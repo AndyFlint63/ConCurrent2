@@ -16,6 +16,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Concurrent2_1</servlet-name>
-        <url-pattern>/StatelessFactorizer</url-pattern>
+        <url-pattern>/statelessfactorizer</url-pattern>
     </servlet-mapping>
 </web-app>
