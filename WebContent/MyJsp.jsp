@@ -21,6 +21,9 @@ body {
 </div>
  
     <div align="center" style="margin-top: 50px;">
+    <p> First example of stateless factorization</p>
+    <p> see page # for example </p>
+    <p> now need to work out how to return to this page after calling Servlet</p>
  
         <form action="statelessfactorizer" method="get">
         <input type="submit" value="submit">
