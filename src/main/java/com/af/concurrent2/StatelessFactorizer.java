@@ -60,11 +60,19 @@ public class StatelessFactorizer extends HttpServlet {
 	
 
 	
-	public void service(ServletRequest req, ServletResponse resp) {
-		BigInteger i = extractFromRequest(req);
+	public void service(HttpServletRequest request, HttpServletResponse response) {
+		BigInteger i = extractFromRequest(request);
 		BigInteger[] factors = factor(i);
-		encodeIntoResponse(resp, factors);
-	
+		encodeIntoResponse(response, factors);
+		try {
+			doGet(request, response);
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
