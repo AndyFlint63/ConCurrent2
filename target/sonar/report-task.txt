@@ -1,0 +1,5 @@
+projectKey=com.af.test:Concurrent2
+serverUrl=http://192.168.168.129:9000
+dashboardUrl=http://192.168.168.129:9000/dashboard/index/com.af.test:Concurrent2
+ceTaskId=AVjdcvXJkIgkZHKh4yxB
+ceTaskUrl=http://192.168.168.129:9000/api/ce/task?id=AVjdcvXJkIgkZHKh4yxB
