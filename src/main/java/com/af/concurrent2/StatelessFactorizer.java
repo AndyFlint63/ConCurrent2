@@ -44,16 +44,23 @@ public class StatelessFactorizer extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+        String message = "Completed doGet " + this.getServletName();
+
+        request.setAttribute("message", message);
+        request.getRequestDispatcher("/MyJsp.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub    
-		// anoter comment
-		//
-		//
+
+	 
+	        String message = "Completed doPost " + this.getServletName();
+
+	        request.setAttribute("message", message);
+	        request.getRequestDispatcher("/MyJsp.jsp").forward(request, response);
 		
 		doGet(request, response);
 	}
