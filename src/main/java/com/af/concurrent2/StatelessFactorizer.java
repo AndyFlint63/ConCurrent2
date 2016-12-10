@@ -1,6 +1,7 @@
 package com.af.concurrent2;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigInteger;
 
 import javax.servlet.ServletConfig;
@@ -48,6 +49,11 @@ public class StatelessFactorizer extends HttpServlet {
         String message = "Completed doGet " + this.getServletName();
 
         request.setAttribute("message", message);
+        response.setContentType("text/html");
+
+        // Actual logic goes here.
+        PrintWriter out = response.getWriter();
+        out.println("<h1>" + message + "</h1>");
         request.getRequestDispatcher("/MyJsp.jsp").forward(request, response);
 	}
 
